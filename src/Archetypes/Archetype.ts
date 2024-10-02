@@ -1,8 +1,6 @@
 import { EnergyType } from '../Energy';
 
 export default abstract class Archetype {
-  static _createdInstances = 0;
-
   constructor(
     private _name: string,
     private _special: number = 0,
@@ -18,4 +16,8 @@ export default abstract class Archetype {
   }
 
   abstract get energyType(): EnergyType;
+
+  static nextInstanceCount(): void {
+    throw new Error('Not implemented');
+  }
 }
